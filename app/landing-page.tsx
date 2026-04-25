@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Scale, FileText, Users, Shield, TrendingUp, Sparkles } from "lucide-react";
+import { ArrowRight, Check, FileText, Shield, Users, Scale, TrendingUp, Sparkles, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function LandingPage() {
@@ -16,7 +16,7 @@ export default function LandingPage() {
     {
       icon: FileText,
       title: "AI-Powered Contract Drafting",
-      description: "Generate sophisticated legal documents in minutes with our advanced AI that understands Indian law and legal precedents."
+      description: "Generate sophisticated legal documents in minutes with advanced AI that understands Indian law and legal precedents."
     },
     {
       icon: Shield,
@@ -71,9 +71,9 @@ export default function LandingPage() {
       name: "Solo Practitioner",
       price: "₹8,999",
       period: "/month",
-      description: "Perfect for individual lawyers starting their digital journey",
+      description: "Perfect for individual lawyers",
       features: [
-        "10 AI-drafted documents per month",
+        "10 AI-drafted documents/month",
         "Basic compliance tracking",
         "5GB secure cloud storage",
         "Email support",
@@ -86,15 +86,15 @@ export default function LandingPage() {
       name: "Growing Firm",
       price: "₹24,999",
       period: "/month",
-      description: "Ideal for established practices seeking efficiency",
+      description: "Ideal for established practices",
       features: [
-        "Unlimited AI document generation",
+        "Unlimited AI documents",
         "Advanced compliance management",
         "100GB secure storage",
         "Up to 5 team members",
-        "Priority support & training",
+        "Priority support",
         "Custom template builder",
-        "Advanced analytics dashboard"
+        "Advanced analytics"
       ],
       cta: "Get Started Today",
       highlighted: true,
@@ -103,15 +103,15 @@ export default function LandingPage() {
       name: "Enterprise",
       price: "Custom",
       period: "pricing",
-      description: "For large organizations with specific needs",
+      description: "For large organizations",
       features: [
         "Everything in Growing Firm",
         "Unlimited team members",
         "Custom API integrations",
         "Dedicated account manager",
-        "Advanced security & compliance",
+        "Advanced security",
         "24/7 phone support",
-        "Bespoke training programs"
+        "Bespoke training"
       ],
       cta: "Contact Sales",
       highlighted: false,
@@ -119,36 +119,33 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src="/logo.png"
                 alt="TrueLex"
-                width={44}
-                height={44}
-                className="w-11 h-11 drop-shadow-lg transform group-hover:scale-105 transition-transform"
+                width={40}
+                height={40}
+                className="w-10 h-10 drop-shadow-md transform group-hover:scale-105 transition-transform"
               />
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold text-slate-900">
-                  TrueLex
-                </span>
-                <span className="text-xs text-slate-600 font-medium tracking-wide">LEGAL PRACTICE MANAGEMENT</span>
-              </div>
+              <span className="text-xl font-semibold text-gray-900">
+                TrueLex
+              </span>
             </Link>
 
             <div className="flex items-center gap-8">
               <div className="hidden md:flex items-center gap-8">
-                <Link href="#features" className="text-slate-700 hover:text-slate-900 transition font-medium">
+                <Link href="#features" className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
                   Features
                 </Link>
-                <Link href="#testimonials" className="text-slate-700 hover:text-slate-900 transition font-medium">
+                <Link href="#testimonials" className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
                   Testimonials
                 </Link>
-                <Link href="#pricing" className="text-slate-700 hover:text-slate-900 transition font-medium">
+                <Link href="#pricing" className="text-gray-600 hover:text-gray-900 transition text-sm font-medium">
                   Pricing
                 </Link>
               </div>
@@ -156,13 +153,13 @@ export default function LandingPage() {
               <div className="flex items-center gap-4">
                 <a
                   href="https://app.truelex.xyz"
-                  className="text-slate-700 hover:text-slate-900 transition font-medium"
+                  className="text-gray-600 hover:text-gray-900 transition text-sm font-medium"
                 >
                   Sign In
                 </a>
                 <a
                   href="https://app.truelex.xyz"
-                  className="px-6 py-2.5 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
+                  className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-all shadow-sm hover:shadow-md"
                 >
                   Get Started
                 </a>
@@ -173,26 +170,28 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section with Background */}
-      <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative pt-32 pb-24 px-6 lg:px-8 overflow-hidden min-h-[85vh] flex items-center">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/landing-bg.jpg"
             alt="Background"
             fill
-            className="object-cover opacity-15"
+            className="object-cover"
             priority
+            quality={100}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-purple-900/95"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.05),transparent_70%)]"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-4xl mx-auto space-y-8 pt-12">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          <div className="max-w-4xl">
             {/* Badge */}
-            <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-50 border border-amber-200">
-                <Sparkles className="w-4 h-4 text-amber-600" />
-                <span className="text-sm font-serif font-semibold text-amber-900">
+            <div className={`transition-all duration-1000 mb-8 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                <Sparkles className="w-4 h-4 text-blue-300" />
+                <span className="text-sm font-medium text-white">
                   Trusted by 500+ Legal Professionals Across India
                 </span>
               </div>
@@ -200,86 +199,84 @@ export default function LandingPage() {
 
             {/* Main Headline */}
             <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6">
-                Excellence in Legal
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                Modern Legal Practice
                 <br />
-                <span className="text-slate-700 italic">Practice Management</span>
+                Management for{' '}
+                <span className="font-serif italic text-blue-200">India</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
-                Harness the power of artificial intelligence to streamline your legal practice.
-                Draft contracts, manage compliance, and conduct due diligence with unprecedented efficiency.
+              <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl mb-10">
+                Harness the power of AI to streamline your legal practice. Draft contracts, manage compliance, and conduct due diligence with unprecedented efficiency.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 justify-center pt-4 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className={`flex flex-col sm:flex-row gap-4 mb-10 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <a
                 href="https://app.truelex.xyz"
-                className="group px-10 py-4 rounded-lg bg-slate-900 text-white font-serif text-lg font-semibold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+                className="group px-8 py-4 rounded-lg bg-white text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
               >
-                Begin Your Journey
+                Start Your Free Trial
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button className="px-10 py-4 rounded-lg border-2 border-slate-300 text-slate-900 font-serif text-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all">
-                Schedule Consultation
+              <button className="px-8 py-4 rounded-lg border-2 border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all">
+                Schedule a Demo
               </button>
             </div>
 
             {/* Trust Indicators */}
-            <div className={`flex flex-wrap items-center justify-center gap-8 pt-8 text-sm transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`flex flex-wrap items-center gap-6 text-sm transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
               <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-emerald-600" />
-                <span className="text-slate-600">No credit card required</span>
+                <Check className="w-5 h-5 text-green-400" />
+                <span className="text-blue-100">No credit card required</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-emerald-600" />
-                <span className="text-slate-600">14-day complimentary trial</span>
+                <Check className="w-5 h-5 text-green-400" />
+                <span className="text-blue-100">14-day free trial</span>
               </div>
               <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-emerald-600" />
-                <span className="text-slate-600">Cancel anytime</span>
+                <Check className="w-5 h-5 text-green-400" />
+                <span className="text-blue-100">Cancel anytime</span>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
+      {/* Stats Bar */}
+      <section className="bg-gray-900 py-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="font-serif text-5xl font-bold text-white mb-2">500+</div>
-              <div className="text-slate-400">Law Firms</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">500+</div>
+              <div className="text-gray-400 text-sm">Law Firms</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-5xl font-bold text-white mb-2">10,000+</div>
-              <div className="text-slate-400">Documents Generated</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">10,000+</div>
+              <div className="text-gray-400 text-sm">Documents Generated</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-5xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-slate-400">Uptime Guarantee</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">99.9%</div>
+              <div className="text-gray-400 text-sm">Uptime SLA</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-5xl font-bold text-white mb-2">45sec</div>
-              <div className="text-slate-400">Average Draft Time</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">45sec</div>
+              <div className="text-gray-400 text-sm">Avg. Draft Time</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="features" className="py-24 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-slate-900">
-              Comprehensive Legal Solutions
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+              Everything You Need for a{' '}
+              <span className="font-serif italic text-blue-600">Modern</span> Legal Practice
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Every tool you need to operate a modern, efficient legal practice
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive tools designed to streamline your workflow and enhance productivity
             </p>
           </div>
 
@@ -289,15 +286,15 @@ export default function LandingPage() {
               return (
                 <div
                   key={index}
-                  className="group p-8 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300"
+                  className="group p-8 rounded-2xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-slate-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Icon className="w-7 h-7 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -308,13 +305,15 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section id="testimonials" className="py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-slate-900">
-              What Legal Professionals Say
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+              What{' '}
+              <span className="font-serif italic text-blue-600">Legal Professionals</span>
+              {' '}Say
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from lawyers who have transformed their practice with TrueLex
             </p>
           </div>
@@ -323,21 +322,19 @@ export default function LandingPage() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="p-8 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+                className="p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-slate-700 italic mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </p>
-                <div className="border-t border-slate-200 pt-4">
-                  <div className="font-serif font-bold text-slate-900">{testimonial.author}</div>
-                  <div className="text-sm text-slate-600">{testimonial.firm}</div>
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                  <div className="text-sm text-gray-600">{testimonial.firm}</div>
                 </div>
               </div>
             ))}
@@ -346,13 +343,13 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="pricing" className="py-24 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-slate-900">
-              Transparent, Fair Pricing
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+              <span className="font-serif italic text-blue-600">Transparent</span>, Fair Pricing
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Choose the plan that best suits your practice
             </p>
           </div>
@@ -363,41 +360,41 @@ export default function LandingPage() {
                 key={index}
                 className={`rounded-2xl p-8 transition-all duration-300 ${
                   plan.highlighted
-                    ? 'bg-slate-900 text-white shadow-2xl scale-105 border-4 border-slate-900'
-                    : 'bg-slate-50 border-2 border-slate-200 hover:shadow-lg hover:border-slate-300'
+                    ? 'bg-blue-600 text-white shadow-2xl scale-105 border-2 border-blue-600'
+                    : 'bg-white border-2 border-gray-200 hover:shadow-lg hover:border-gray-300'
                 }`}
               >
                 {plan.highlighted && (
                   <div className="text-center mb-6">
-                    <span className="inline-block px-4 py-1 rounded-full bg-white text-slate-900 text-sm font-bold">
+                    <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-white text-xs font-bold">
                       RECOMMENDED
                     </span>
                   </div>
                 )}
 
                 <div className="text-center mb-8">
-                  <h3 className={`font-serif text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-slate-900'}`}>
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mb-6 ${plan.highlighted ? 'text-slate-300' : 'text-slate-600'}`}>
+                  <p className={`text-sm mb-6 ${plan.highlighted ? 'text-blue-100' : 'text-gray-600'}`}>
                     {plan.description}
                   </p>
                   <div className="mb-2">
-                    <span className={`font-serif text-5xl font-bold ${plan.highlighted ? 'text-white' : 'text-slate-900'}`}>
+                    <span className={`text-5xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                       {plan.price}
                     </span>
                   </div>
-                  <div className={`text-sm ${plan.highlighted ? 'text-slate-400' : 'text-slate-600'}`}>
+                  <div className={`text-sm ${plan.highlighted ? 'text-blue-200' : 'text-gray-600'}`}>
                     {plan.period}
                   </div>
                 </div>
 
                 <a
                   href="https://app.truelex.xyz"
-                  className={`block w-full py-3 rounded-lg font-serif font-semibold transition-all mb-8 text-center ${
+                  className={`block w-full py-3 rounded-lg font-semibold transition-all mb-8 text-center ${
                     plan.highlighted
-                      ? 'bg-white text-slate-900 hover:bg-slate-100 shadow-lg'
-                      : 'bg-slate-900 text-white hover:bg-slate-800'
+                      ? 'bg-white text-blue-600 hover:bg-blue-50 shadow-lg'
+                      : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
                   {plan.cta}
@@ -406,8 +403,8 @@ export default function LandingPage() {
                 <div className="space-y-4">
                   {plan.features.map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-white' : 'text-emerald-600'}`} />
-                      <span className={`text-sm ${plan.highlighted ? 'text-slate-200' : 'text-slate-700'}`}>
+                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? 'text-blue-200' : 'text-green-600'}`} />
+                      <span className={`text-sm ${plan.highlighted ? 'text-blue-50' : 'text-gray-700'}`}>
                         {feature}
                       </span>
                     </div>
@@ -420,88 +417,86 @@ export default function LandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Ready to Transform Your
-            <br />
-            <span className="italic">Legal Practice?</span>
+      <section className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Ready to{' '}
+            <span className="font-serif italic text-blue-200">Transform</span>
+            {' '}Your Legal Practice?
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Join hundreds of law firms already using TrueLex to deliver exceptional legal services with unprecedented efficiency.
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            Join hundreds of law firms using TrueLex to deliver exceptional legal services with unprecedented efficiency.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a
               href="https://app.truelex.xyz"
-              className="group px-10 py-4 rounded-lg bg-white text-slate-900 font-serif text-lg font-semibold hover:bg-slate-100 transition-all shadow-xl flex items-center justify-center gap-2"
+              className="group px-10 py-4 rounded-lg bg-white text-blue-900 font-semibold hover:bg-blue-50 transition-all shadow-xl flex items-center justify-center gap-2"
             >
               Start Your Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <button className="px-10 py-4 rounded-lg border-2 border-white text-white font-serif text-lg font-semibold hover:bg-white/10 transition-all">
+            <button className="px-10 py-4 rounded-lg border-2 border-white text-white font-semibold hover:bg-white/10 transition-all">
               Contact Sales
             </button>
           </div>
 
-          <p className="text-sm text-slate-400 pt-4">
+          <p className="text-sm text-blue-200 pt-4">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <footer className="border-t border-gray-200 py-12 px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Image src="/logo.png" alt="TrueLex" width={32} height={32} className="w-8 h-8" />
-                <div>
-                  <span className="font-serif text-lg font-bold text-slate-900">TrueLex</span>
-                  <div className="text-xs text-slate-600">Legal Practice Management</div>
-                </div>
+                <span className="text-lg font-semibold text-gray-900">TrueLex</span>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 AI-powered legal practice management platform for modern law firms in India.
               </p>
             </div>
 
             <div>
-              <h4 className="font-serif font-bold text-slate-900 mb-4">Product</h4>
-              <ul className="space-y-2 text-slate-600 text-sm">
-                <li><Link href="#features" className="hover:text-slate-900 transition">Features</Link></li>
-                <li><Link href="#pricing" className="hover:text-slate-900 transition">Pricing</Link></li>
-                <li><Link href="#" className="hover:text-slate-900 transition">Security</Link></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li><Link href="#features" className="hover:text-gray-900 transition">Features</Link></li>
+                <li><Link href="#pricing" className="hover:text-gray-900 transition">Pricing</Link></li>
+                <li><Link href="#" className="hover:text-gray-900 transition">Security</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-serif font-bold text-slate-900 mb-4">Company</h4>
-              <ul className="space-y-2 text-slate-600 text-sm">
-                <li><Link href="#" className="hover:text-slate-900 transition">About Us</Link></li>
-                <li><Link href="#" className="hover:text-slate-900 transition">Blog</Link></li>
-                <li><Link href="#" className="hover:text-slate-900 transition">Contact</Link></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li><Link href="#" className="hover:text-gray-900 transition">About</Link></li>
+                <li><Link href="#" className="hover:text-gray-900 transition">Blog</Link></li>
+                <li><Link href="#" className="hover:text-gray-900 transition">Contact</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-serif font-bold text-slate-900 mb-4">Legal</h4>
-              <ul className="space-y-2 text-slate-600 text-sm">
-                <li><Link href="#" className="hover:text-slate-900 transition">Privacy Policy</Link></li>
-                <li><Link href="#" className="hover:text-slate-900 transition">Terms of Service</Link></li>
+              <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
+                <li><Link href="#" className="hover:text-gray-900 transition">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:text-gray-900 transition">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-600 text-sm">
+          <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600 text-sm">
               © 2024 TrueLex. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="#" className="text-slate-500 hover:text-slate-900 transition text-sm">Twitter</Link>
-              <Link href="#" className="text-slate-500 hover:text-slate-900 transition text-sm">LinkedIn</Link>
-              <Link href="#" className="text-slate-500 hover:text-slate-900 transition text-sm">Instagram</Link>
+              <Link href="#" className="text-gray-500 hover:text-gray-900 transition text-sm">Twitter</Link>
+              <Link href="#" className="text-gray-500 hover:text-gray-900 transition text-sm">LinkedIn</Link>
+              <Link href="#" className="text-gray-500 hover:text-gray-900 transition text-sm">Instagram</Link>
             </div>
           </div>
         </div>
